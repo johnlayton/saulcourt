@@ -34,7 +34,7 @@ start = time.time()
 #   print "Time high ..." + str( stop - start )
 #   print "we are still waiting for a falling edge - how cool?\n"
 
-left = Counter( name = "left" )
+left = Counter( name = "left - josh" )
 right = Counter( name = "right" )
 
 # print "Make sure you have a button connected so that when pressed"
