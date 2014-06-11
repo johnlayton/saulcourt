@@ -126,7 +126,7 @@ try:
   GPIO.output(Motor1E,GPIO.LOW)
   GPIO.output(Motor2E,GPIO.LOW)
 
-  # GPIO.cleanup()
+  GPIO.cleanup()
 
 except KeyboardInterrupt:
-  # GPIO.cleanup()
+  GPIO.cleanup()
