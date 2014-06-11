@@ -121,8 +121,8 @@ try:
   sleep(1)
 
   print "Now stop"
-  E1.stop()
-  E2.stop()
+  # E1.stop()
+  # E2.stop()
   GPIO.output(Motor1E,GPIO.LOW)
   GPIO.output(Motor2E,GPIO.LOW)
 
