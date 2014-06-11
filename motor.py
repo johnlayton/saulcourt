@@ -76,47 +76,47 @@ try:
   #   B.ChangeDutyCycle(i)
   sleep(1)
   '''
-  E1 = GPIO.PWM(Motor1E, 100)
-  E2 = GPIO.PWM(Motor2E, 100)
-
-  E1.start(40)
-  E2.start(53)
+  # E1 = GPIO.PWM(Motor1E, 100)
+  # E2 = GPIO.PWM(Motor2E, 100)
+  #
+  # E1.start(40)
+  # E2.start(53)
 
   print "Going forwards"
   GPIO.output(Motor1A,GPIO.HIGH)
   GPIO.output(Motor1B,GPIO.LOW)
-  # GPIO.output(Motor1E,GPIO.HIGH)
+  GPIO.output(Motor1E,GPIO.HIGH)
 
   GPIO.output(Motor2A,GPIO.HIGH)
   GPIO.output(Motor2B,GPIO.LOW)
-  # GPIO.output(Motor2E,GPIO.HIGH)
+  GPIO.output(Motor2E,GPIO.HIGH)
 
-  for i in range(0, 40, 5):
-    print i
-    E1.ChangeDutyCycle(i)
-    E2.ChangeDutyCycle(i + 13)
-    sleep(0.05)
-
-  sleep(2)
-
-  print "Turn left"
-  E1.ChangeDutyCycle(30)
-  E2.ChangeDutyCycle(45)
-  GPIO.output(Motor1A,GPIO.LOW)
-  GPIO.output(Motor1B,GPIO.HIGH)
-  GPIO.output(Motor2A,GPIO.HIGH)
-  GPIO.output(Motor2B,GPIO.LOW)
+  # for i in range(0, 40, 5):
+  #   print i
+  #   E1.ChangeDutyCycle(i)
+  #   E2.ChangeDutyCycle(i + 13)
+  #   sleep(0.05)
+  #
+  # sleep(2)
+  #
+  # print "Turn left"
+  # E1.ChangeDutyCycle(30)
+  # E2.ChangeDutyCycle(45)
+  # GPIO.output(Motor1A,GPIO.LOW)
+  # GPIO.output(Motor1B,GPIO.HIGH)
+  # GPIO.output(Motor2A,GPIO.HIGH)
+  # GPIO.output(Motor2B,GPIO.LOW)
 
   sleep(2)
 
   print "Going backwards"
   GPIO.output(Motor1A,GPIO.LOW)
   GPIO.output(Motor1B,GPIO.HIGH)
-  # GPIO.output(Motor1E,GPIO.HIGH)
+  GPIO.output(Motor1E,GPIO.HIGH)
 
   GPIO.output(Motor2A,GPIO.LOW)
   GPIO.output(Motor2B,GPIO.HIGH)
-  # GPIO.output(Motor2E,GPIO.HIGH)
+  GPIO.output(Motor2E,GPIO.HIGH)
 
   sleep(1)
 
@@ -126,7 +126,7 @@ try:
   GPIO.output(Motor1E,GPIO.LOW)
   GPIO.output(Motor2E,GPIO.LOW)
 
-  GPIO.cleanup()
+  # GPIO.cleanup()
 
 except KeyboardInterrupt:
-  GPIO.cleanup()
+  # GPIO.cleanup()
