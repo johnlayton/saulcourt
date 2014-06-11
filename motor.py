@@ -123,6 +123,8 @@ try:
   print "Now stop"
   # E1.stop()
   # E2.stop()
+  GPIO.output(Motor1B,GPIO.LOW)
+  GPIO.output(Motor2B,GPIO.LOW)
   GPIO.output(Motor1E,GPIO.LOW)
   GPIO.output(Motor2E,GPIO.LOW)
 
