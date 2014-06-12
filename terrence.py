@@ -20,13 +20,13 @@ class Motor(object):
     GPIO.setup(e, GPIO.OUT)
 
   def forward(self):
-    GPIO.output(self.a, GPIO.HIGH)
-    GPIO.output(self.b, GPIO.LOW)
+    GPIO.output(self.a, GPIO.LOW)
+    GPIO.output(self.b, GPIO.HIGH)
     GPIO.output(self.e, GPIO.HIGH)
 
   def reverse(self):
-    GPIO.output(self.a, GPIO.LOW)
-    GPIO.output(self.b, GPIO.HIGH)
+    GPIO.output(self.a, GPIO.HIGH)
+    GPIO.output(self.b, GPIO.LOW)
     GPIO.output(self.e, GPIO.HIGH)
 
   def stop(self):
@@ -47,6 +47,10 @@ class Robot(object):
     self.left.forward()
     self.right.forward()
 
+  def reverse(self):
+    self.left.reverse()
+    self.right.reverse()
+
   def stop(self):
     self.left.stop()
     self.right.stop()
@@ -54,6 +58,8 @@ class Robot(object):
 try:
   terrence = Robot()
   terrence.forward()
+  time.sleep(2)
+  terrence.reverse()
   time.sleep(2)
   terrence.stop()
   GPIO.cleanup()
