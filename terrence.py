@@ -19,17 +19,17 @@ class Motor(object):
     GPIO.setup(b, GPIO.OUT)
     GPIO.setup(e, GPIO.OUT)
 
-  def forward():
+  def forward(self):
     GPIO.output(self.a, GPIO.HIGH)
     GPIO.output(self.b, GPIO.LOW)
     GPIO.output(self.e, GPIO.HIGH)
 
-  def reverse():
+  def reverse(self):
     GPIO.output(self.a, GPIO.LOW)
     GPIO.output(self.b, GPIO.HIGH)
     GPIO.output(self.e, GPIO.HIGH)
 
-  def stop():
+  def stop(self):
     GPIO.output(self.a, GPIO.LOW)
     GPIO.output(self.b, GPIO.LOW)
     GPIO.output(self.e, GPIO.LOW)
@@ -43,11 +43,11 @@ class Robot(object):
     self.left = Motor(Motor1A, Motor1B, Motor1E)
     self.right = Motor(Motor2A, Motor2B, Motor2E)
 
-  def forward():
+  def forward(self):
     self.left.forward()
     self.right.forward()
 
-  def stop():
+  def stop(self):
     self.left.stop()
     self.right.stop()
 
