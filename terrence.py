@@ -7,9 +7,9 @@ import os
 import termios
 import tty
 
-Motor1A = 23
-Motor1B = 24
-Motor1E = 25
+Motor1A = 17#23
+Motor1B = 27#24
+Motor1E = 22#25
 
 Odometer1 = 14
 
@@ -240,13 +240,13 @@ class Console(object):
     return key
 
   def run(self):
-    while True:
-      try:
+    try:
+      while True:
         key = str(self.key() )
         if key == "y":
-          self.rr.forward()
+          self.rr.forward(10)
         elif key == "b":
-          self.rr.reverse()
+          self.rr.reverse(10)
 
         elif key == "h":
           self.rr.right()
@@ -265,8 +265,8 @@ class Console(object):
         elif key == " ":
           self.rr.stop()
 
-      except KeyboardInterrupt:
-        GPIO.cleanup()
+    except KeyboardInterrupt:
+      GPIO.cleanup()
 
 # Demo().run()
-# Console().run()
+Console().run()
