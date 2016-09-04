@@ -273,5 +273,8 @@ class Console( object ):
         except KeyboardInterrupt:
             GPIO.cleanup( )
 
+if __name__ == "__main__":
+    Demo().run()
+    # Console().run()
 # Demo().run()
-Console().run()
+# Console().run()
